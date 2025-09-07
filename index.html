@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulta ao Acervo</title>
+  <style>
+    /* Zera margens e garante ocupação total */
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* Fundo em tela cheia */
+    body {
+      background: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Botão estilizado */
+    .btn {
+      padding: 20px 40px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #fff;
+      background: linear-gradient(135deg, #8e44ad, #2980b9);
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+      background: linear-gradient(135deg, #9b59b6, #3498db);
+    }
+
+    /* Brilho animado */
+    .btn::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.4) 10%, transparent 10.01%);
+      transform: scale(0);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .btn:active::after {
+      transform: scale(1);
+      opacity: 1;
+      transition: transform 0.4s, opacity 0.8s;
+    }
+  </style>
+</head>
+<body>
+  <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSUvYFF8wCk-Ag-mEkCu5pNaikK3ltHAuFx_-eguoaKgy2IRSwwL6wGze8ZOdMs_Q-14wSIRDUFvsRy/pubhtml?gid=0&single=true"
+     target="_blank"
+     class="btn">
+    📚 Consultar Acervo
+  </a>
+</body>
+</html>
