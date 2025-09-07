@@ -1,0 +1,17 @@
+# OCR e processamento de imagens
+easyocr==1.6.2
+pillow==10.1.0
+opencv-python==4.8.1.78
+pdf2image==1.16.3
+PyMuPDF==1.22.5
+
+# Google Sheets e Drive
+gspread==5.7.2
+oauth2client==4.1.3
+google-api-python-client==2.97.0
+google-auth==2.23.0
+google-auth-oauthlib==1.2.0
+google-auth-httplib2==0.1.0
+
+# Auxiliares
+numpy==1.26.2
