@@ -16,7 +16,6 @@
       position: relative;
     }
 
-    /* Camada opaca sobre o fundo */
     body::before {
       content: "";
       position: absolute;
@@ -45,6 +44,47 @@
       margin-bottom: 20px;
       color: #fff;
       text-shadow: 2px 2px 5px #000;
+    }
+
+    .workflow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 40px 0;
+    }
+
+    .stage {
+      text-align: center;
+      animation: float 2s ease-in-out infinite;
+    }
+
+    .icon {
+      width: 80px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .icon:hover {
+      transform: scale(1.1);
+    }
+
+    .arrow {
+      font-size: 2rem;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
     }
 
     .carousel {
@@ -116,6 +156,29 @@
 <body>
   <div class="container">
     <h1>📖 Como Funciona Nosso Aplicativo</h1>
+
+    <div class="workflow">
+      <div class="stage">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Dom_Casmurro.jpg" alt="Capa do livro" class="icon">
+        <p>📸 Capa fotografada</p>
+      </div>
+      <div class="arrow">➡️</div>
+      <div class="stage">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Google_Drive_logo.png/600px-Google_Drive_logo.png" alt="Google Drive" class="icon">
+        <p>☁️ Enviada ao Drive</p>
+      </div>
+      <div class="arrow">➡️</div>
+      <div class="stage">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Google_Colaboratory_logo.svg/512px-Google_Colaboratory_logo.svg.png" alt="Google Colab" class="icon">
+        <p>🧠 OCR via Colab</p>
+      </div>
+      <div class="arrow">➡️</div>
+      <div class="stage">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Sheets_logo.svg" alt="Google Sheets" class="icon">
+        <p>📊 Dados organizados</p>
+      </div>
+    </div>
+
     <div class="carousel">
       <div class="step">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Dom_Casmurro.jpg/800px-Dom_Casmurro.jpg" alt="Foto da capa do livro">
