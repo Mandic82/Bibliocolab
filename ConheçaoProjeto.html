@@ -13,41 +13,67 @@
       background: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
       background-size: cover;
       color: #fff;
-      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Camada opaca sobre o fundo */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 0;
     }
 
     .container {
+      position: relative;
+      z-index: 1;
       width: 90%;
       max-width: 1000px;
       margin: auto;
-      padding-top: 50px;
+      padding: 50px 20px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.5);
+      backdrop-filter: blur(10px);
       text-align: center;
     }
 
     h1 {
       font-size: 3rem;
       margin-bottom: 20px;
+      color: #fff;
       text-shadow: 2px 2px 5px #000;
-      animation: fadeInDown 1s ease-out;
+    }
+
+    .carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 20px;
+      padding: 20px 0;
     }
 
     .step {
-      opacity: 0;
-      transform: translateY(50px);
-      transition: all 0.8s ease-out;
-      margin-bottom: 40px;
+      flex: 0 0 80%;
+      scroll-snap-align: center;
+      background-color: rgba(255, 255, 255, 0.15);
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease;
+      color: #fff;
     }
 
-    .step.visible {
-      opacity: 1;
-      transform: translateY(0);
+    .step:hover {
+      transform: scale(1.05);
     }
 
     .step img {
       max-width: 100%;
       border-radius: 10px;
       margin-bottom: 15px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
     }
 
     .step h2 {
@@ -64,6 +90,7 @@
       display: flex;
       justify-content: center;
       gap: 20px;
+      flex-wrap: wrap;
     }
 
     .btn {
@@ -84,39 +111,27 @@
       transform: scale(1.1);
       background: linear-gradient(135deg, #9b59b6, #3498db);
     }
-
-    @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>📖 Como Funciona Nosso Aplicativo</h1>
-
-    <div class="step" id="step1">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Dom_Casmurro.jpg/800px-Dom_Casmurro.jpg" alt="Foto da capa do livro">
-      <h2>1. Captura da Imagem</h2>
-      <p>Fotografamos a capa do livro e salvamos automaticamente em uma pasta do Google Drive.</p>
-    </div>
-
-    <div class="step" id="step2">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/OCR_example.png/800px-OCR_example.png" alt="Processo de OCR">
-      <h2>2. Leitura via OCR</h2>
-      <p>Utilizamos o Google Colab para aplicar OCR e extrair os dados textuais da imagem.</p>
-    </div>
-
-    <div class="step" id="step3">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Google_Sheets_logo.svg/512px-Google_Sheets_logo.svg.png" alt="Google Sheets">
-      <h2>3. Organização dos Dados</h2>
-      <p>Os dados extraídos são tratados e organizados automaticamente em uma planilha do Google Sheets.</p>
+    <div class="carousel">
+      <div class="step">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Dom_Casmurro.jpg/800px-Dom_Casmurro.jpg" alt="Foto da capa do livro">
+        <h2>1. Captura da Imagem</h2>
+        <p>Fotografamos a capa do livro e salvamos automaticamente em uma pasta do Google Drive.</p>
+      </div>
+      <div class="step">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/OCR_example.png/800px-OCR_example.png" alt="Processo de OCR">
+        <h2>2. Leitura via OCR</h2>
+        <p>Utilizamos o Google Colab para aplicar OCR e extrair os dados textuais da imagem.</p>
+      </div>
+      <div class="step">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Google_Sheets_logo.svg/512px-Google_Sheets_logo.svg.png" alt="Google Sheets">
+        <h2>3. Organização dos Dados</h2>
+        <p>Os dados extraídos são tratados e organizados automaticamente em uma planilha do Google Sheets.</p>
+      </div>
     </div>
 
     <div class="footer-buttons">
@@ -124,14 +139,5 @@
       <a href="https://drive.google.com/drive/folders/1gJoxnNYOA0Ppvgu-h1KIxwHVRqTJkvbS?usp=sharing" target="_blank" class="btn">📁 Acessar Projeto</a>
     </div>
   </div>
-
-  <script>
-    // Revela os passos com delay
-    window.addEventListener('load', () => {
-      setTimeout(() => document.getElementById('step1').classList.add('visible'), 500);
-      setTimeout(() => document.getElementById('step2').classList.add('visible'), 1500);
-      setTimeout(() => document.getElementById('step3').classList.add('visible'), 2500);
-    });
-  </script>
 </body>
 </html>
