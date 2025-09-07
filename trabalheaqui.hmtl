@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trabalhe Aqui</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      width: 90%;
+      max-width: 1000px;
+      margin: auto;
+      padding: 50px 20px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.5);
+      backdrop-filter: blur(10px);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #fff;
+      text-shadow: 2px 2px 5px #000;
+    }
+
+    .section {
+      margin: 30px 0;
+    }
+
+    .section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .section p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+
+    input[type="file"] {
+      padding: 10px;
+      background-color: #fff;
+      border-radius: 10px;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .btn {
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #fff;
+      background: linear-gradient(135deg, #8e44ad, #2980b9);
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      transition: all 0.3s ease;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      background: linear-gradient(135deg, #9b59b6, #3498db);
+    }
+
+    .colab-img {
+      width: 120px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .colab-img:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🛠️ Trabalhe Aqui</h1>
+
+    <div class="section">
+      <h2>📸 Salve a imagem da capa</h2>
+      <p>Nomeie a imagem como <strong>20.1.CAPA</strong> e a contracapa como <strong>20.1.CONTRACAPA</strong>. Em seguida, envie para a pasta do projeto.</p>
+      <input type="file" accept="image/*">
+    </div>
+
+    <div class="section">
+      <h2>🧠 Execute o Google Colab</h2>
+      <p>Clique na imagem abaixo para abrir o notebook que processa as imagens via OCR.</p>
+      <a href="https://colab.research.google.com/drive/1TU8UcbrldH7mAEclHqyfCGcP5aYmjCK2?usp=sharing" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Google_Colaboratory_logo.svg/512px-Google_Colaboratory_logo.svg.png" alt="Google Colab" class="colab-img">
+      </a>
+    </div>
+
+    <div class="section">
+      <h2>📊 Veja os resultados</h2>
+      <p>Após a execução, os dados extraídos estarão organizados na planilha abaixo:</p>
+      <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSUvYFF8wCk-Ag-mEkCu5pNaikK3ltHAuFx_-eguoaKgy2IRSwwL6wGze8ZOdMs_Q-14wSIRDUFvsRy/pubhtml?gid=0&single=true" target="_blank" class="btn">📄 Acessar Planilha</a>
+    </div>
+  </div>
+</body>
+</html>
