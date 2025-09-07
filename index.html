@@ -5,14 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Consulta ao Acervo</title>
   <style>
-    /* Zera margens e garante ocupação total */
     html, body {
       height: 100%;
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
-    /* Fundo em tela cheia */
     body {
       background: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
       background-size: cover;
@@ -21,7 +19,13 @@
       align-items: center;
     }
 
-    /* Botão estilizado */
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+
     .btn {
       padding: 20px 40px;
       font-size: 1.5rem;
@@ -34,6 +38,7 @@
       text-decoration: none;
       box-shadow: 0 8px 20px rgba(0,0,0,0.4);
       transition: all 0.3s ease;
+      position: relative;
     }
 
     .btn:hover {
@@ -42,7 +47,6 @@
       background: linear-gradient(135deg, #9b59b6, #3498db);
     }
 
-    /* Brilho animado */
     .btn::after {
       content: '';
       position: absolute;
@@ -64,10 +68,10 @@
   </style>
 </head>
 <body>
-  <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSUvYFF8wCk-Ag-mEkCu5pNaikK3ltHAuFx_-eguoaKgy2IRSwwL6wGze8ZOdMs_Q-14wSIRDUFvsRy/pubhtml?gid=0&single=true"
-     target="_blank"
-     class="btn">
-    📚 Consultar Acervo
-  </a>
+  <div class="button-container">
+    <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSUvYFF8wCk-Ag-mEkCu5pNaikK3ltHAuFx_-eguoaKgy2IRSwwL6wGze8ZOdMs_Q-14wSIRDUFvsRy/pubhtml?gid=0&single=true" target="_blank" class="btn">📚 Consultar Acervo</a>
+    <a href="https://drive.google.com/drive/folders/1gJoxnNYOA0Ppvgu-h1KIxwHVRqTJkvbS?usp=sharing" target="_blank" class="btn">📁 Projeto</a>
+    <a href="https://drive.google.com/drive/folders/1YZvqh4FdZ9d0WK9e5N5plAiceq2UrOTh?usp=drive_link" target="_blank" class="btn">🖼️ Imagens</a>
+  </div>
 </body>
 </html>
