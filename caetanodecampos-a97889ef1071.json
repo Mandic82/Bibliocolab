@@ -1,13 +1,54 @@
+ 1. Acesse o Google Cloud Console
+Link: https://console.cloud.google.com/
+Faça login com sua conta Google (Gmail).
+ 2. Crie um novo projeto (ou use um existente)
+No topo da página, clique no seletor de projeto (ícone de pastinha).
+Clique em "Novo Projeto".
+Dê um nome ao projeto (ex: meu-projeto-drive-sheets).
+Clique em "Criar".
+ 3. Ative as APIs necessárias
+Você precisa ativar:
+Google Drive API
+Google Sheets API
+Siga os passos abaixo para cada uma delas:
+No menu lateral, vá em: APIs e serviços > Biblioteca.
+Pesquise por Google Drive API, clique e depois clique em Ativar.
+Repita o processo para a Google Sheets API.
+ 4. Gere uma chave de API
+Vá para: APIs e serviços > Credenciais.
+Clique em + Criar credenciais.
+Selecione Chave de API.
+A chave será gerada automaticamente e exibida na tela.
+ 5. (Opcional) Restrinja sua chave de API
+É altamente recomendado restringir sua chave para segurança:
+Após gerar a chave, clique em Restringir chave.
+Em Restrições de API, selecione:
+Google Drive API
+Google Sheets API
+(Opcional) Em Restrições de IP ou HTTP, você pode limitar o uso da chave por IPs ou domínios específicos.
+Clique em Salvar.
+ 6. Use sua chave de API em seu código
+Agora você pode usar a chave de API nos seus aplicativos para acessar o Google Drive e o Google Sheets.
+Exemplo de uso para Sheets (em JavaScript ou REST):
+
+GET https://sheets.googleapis.com/v4/spreadsheets/{spreadsheetId}/values/{range}?key=YOUR_API_KEY
+
+Observações importantes:
+
+A chave de API é ideal para projetos públicos ou simples. Para operações mais sensíveis (como escrita ou acesso a arquivos específicos), o ideal é usar OAuth 2.0.
+
+#ESTRUTURA DA CHAVE PRIVADA*
+
 {
   "type": "service_account",
-  "project_id": "caetanodecampos",
-  "private_key_id": "a97889ef107169a0bb5fcf78d276730dc8c39ea9",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEuwIBADANBgkqhkiG9w0BAQEFAASCBKUwggShAgEAAoIBAQC13Eeja7sLtpbT\nILECzLrjKzGOQRsW6YYpFUKQ1TBu5QUQ7R33vT1j8a8JW1e/2mNDiO/YMIZt4DeX\n6CwjSrCLFAJjHob+p7gm1V29fxaoyTrO1fIfSGMOwXmtaTlvlqwzB6CGCmRaHWLS\nYXN/9Qv6+p2wLGnd3ngkM5lOovrUXQ0aBfxEI8esuc0MCAKM2tW1Pf2GTTiHJcez\nEL0FQebDqhpR421XShVs/xkTANWnMCx2hE47YUXUx8EWfiSQh1oFkNUeXqtpLP9P\nZD+3UY9dyWetAAHUSAAq51Nd7PH5Ig78SqxLSnEzDxCoeDsEWLo78dkUpGl3y5a2\nO32J2B91AgMBAAECgf9025cs64zFeg5wnBEiO2vbjWXKgwtlLamHvKGJb3Qvzfnz\nZmpbRr6r+iD/YjKAlVQzkUqNIKFA+VK/yfCSvOu0cqcWCge0mxE54uDZY1CsJKIl\nRlTOxTThxnDpfTPrAGamY8BCYWsafMeDaBtPnaaVH3U0P1XHu6x3lrBsV03WJt8u\neTpqBtUXrpCYhqGhk9iZpdhcSu1/myhSQ7tr9CXEMgb9C9pr22Kv/0tTwVoCSzL8\naiG3f+Vci/U3MNXq30AahrZX9652FAS22MKPu9euf+sFDMBEOpRcdWRySwO0VhxF\notvApIr9cvE/fJ3M8PpQHGDhCZt/PZr5pzqKwLcCgYEA4dbGEhG82vQCZHo0nIhL\nimDO0eYIkCeJgj1ypN3jb+Wxl6Bzb1iXqTZ7q8UsoQt/G8iFT2bJpD4xBEu418Yq\noftwdM+qm38LD8fWCX+FoD46JB1qJxym1jpUVZI5ElpJaCVWPcJYvh2OqK3Z9FmL\na80c72jXDVaY4wiIJBuYMNcCgYEAziXsBNPaeu5iWVpwOWu5WQ8xAZhFw+67JznS\n7EoYU4JlxIv5L9g+AYq7es4kErzsp/oTCxNqUzb4SHHVj4o7xtyQthpKMwpoxpzG\nRrOG1MyL/w533VZlfQ7chI64ml9F4EBlDjjL4+YMkngBTseAni7jZi9vOp3u2LEw\nTwLmDJMCgYADrUZ+RtGnUu+zCRZQMhvgveDAJBmhlzMy7qMuMfqg+MFicZdPica2\nV4+95TDr0k8YebRJ7ad8yBJuOnlg8fYBuyFClZr2eyQH9r3yW6QmTr0Nl3kB+AJz\nXHHBDudk+BlX27vCt6ZQOhT3hBUXWFnfwHAnKbLOoclNcPced2CL8wKBgQDFvkid\nBN8RhrOehIsb+YJstI7MudVKMikiYmw6LoURLgcStzYLuAEal4ppLW4a71CPfOlh\neXlHY3Zcf51cuDvI8PB7TdKZDUYeJmpnjXQrkh5ERguirGpjwKq1GPZpVjR//SUy\ntDaYYKb0pNqUR/jPQ6jr71phvvdKswTk9aHYswKBgBNnUEYIvl7oDLcFalFH5Axv\ntbaYIdCZGpqCejvrr2XYSW3i7PHGVefIo4OoxWHjc6Lg3wIRRC5xE/6kv6VNWE6q\npeCuA20JyDdLWj7p2S+Ca9lq88qgdni5OLNQQOAUwu6n/UYNi9wJEOXlCl0Ywzrm\nateGOqmzjWkps6RyvA6H\n-----END PRIVATE KEY-----\n",
-  "client_email": "colab-access@caetanodecampos.iam.gserviceaccount.com",
-  "client_id": "104690996802960989773",
-  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-  "token_uri": "https://oauth2.googleapis.com/token",
-  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/colab-access%40caetanodecampos.iam.gserviceaccount.com",
-  "universe_domain": "googleapis.com"
+  "project_id": "xxxxxxxxxxxxxxxx",
+  "private_key_id": "xxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "private_key": "-----BEGIN PRIVATE KEY-----\"
+  "client_email": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "client_id": "xxxxxxxxxxxxxxxxxxxx",
+  "auth_uri": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "token_uri": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "auth_provider_x509_cert_url": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "client_x509_cert_url": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "universe_domain": "xxxxxxxxxxxxxxxxxxxxx"
 }
