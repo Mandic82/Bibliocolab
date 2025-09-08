@@ -2,7 +2,7 @@
   "type": "service_account",
   "project_id": "my-project-id",
   "private_key_id": "xxxxxxxxxxxxxxxxxxxxxxxxxxx",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nA1XXXXXXXXXXXXXXXXXX\n-----END PRIVATE KEY-----\n",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nA1XXXXXXXXXXXXXsAfAi0S0V2QJB+ggikz1rONGQrOnPBlAoGAF7Uh/2w3hsg8OdUKsFHQ\nuj3iEFhQ96rD0N+BBS3KREXUqvoZIMLu/VmbIB4PW+F2MA4hXAXNuEv2lg1q46cf\nvVtnEUTxVO/Afmfd/GDTsEcPnGga3DzZ7xZcS25l/pepOasx0XhxdY5/DenHeFF1\n8M/zQuremJtg5EeRmuU+lRs=\n-----END PRIVATE KEY-----\n",
   "client_email": "my-service-account@my-project-id.iam.gserviceaccount.com",
   "client_id": "xxxxxxxxxxxxxxxxxxxx",
   "auth_uri": "https://accounts.google.com/o/oauth2/auth",
