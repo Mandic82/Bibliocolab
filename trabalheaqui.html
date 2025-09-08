@@ -16,12 +16,13 @@
       position: relative;
     }
 
+    /* Remover a camada de fundo escurecido */
     body::before {
       content: "";
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background-color: rgba(0, 0, 0, 0.6);
+      background-color: transparent; /* Remover a opacidade */
       z-index: 0;
     }
 
@@ -32,10 +33,9 @@
       max-width: 1000px;
       margin: auto;
       padding: 50px 20px;
-      background-color: rgba(0, 0, 0, 0.75); /* Mais escuro e opaco */
+      background-color: rgba(0, 0, 0, 0.75); /* Mantém o fundo escuro para o texto */
       border-radius: 20px;
       box-shadow: 0 0 30px rgba(0,0,0,0.5);
-      backdrop-filter: blur(10px); /* Vidro mais fosco */
       text-align: left; /* Alinhamento à esquerda */
     }
 
@@ -108,23 +108,22 @@
     <h1>🛠️ Teste Aqui...</h1>
 
     <div class="section">
-      <h2>📸 Etapa 1: Selecione e Fotografe as Obras</h2>
+      <h2>Etapa 1: Selecione e Fotografe as Obras</h2>
       <p>Antes de começar o processo, selecione as obras que serão cadastradas. Tire fotos nítidas e bem iluminadas da frente da obra e, se necessário, da contracapa. Certifique-se de que as imagens estejam de boa qualidade para garantir a melhor extração de dados via OCR.</p>
       <p><strong>Dica:</strong> Utilize uma boa iluminação e evite reflexos nas imagens para garantir o sucesso do processamento.</p>
     </div>
 
     <div class="section">
-      <h2>📸 Etapa 2: Selecione e Envie as Imagens</h2>
+      <h2>Etapa 2: Selecione e Envie as Imagens</h2>
       <p>Escolha as imagens da capa e contracapa para enviar para o processamento. As imagens devem ser nomeadas como <strong>1.1.CAPA</strong> e/ou <strong>1.1.CONTRACAPA</strong>.</p>
   
       <!-- Campo para upload de arquivos -->
       <label for="file-upload" class="btn">📤 Selecionar Imagens</label>
-      <input type="file" id="file-upload" name="file-upload" accept="image/*" multiple>
       <p id="file-info"></p> <!-- Para mostrar as imagens selecionadas -->
     </div>
 
     <div class="section">
-      <h2>🧠 Etapa 3: Execute o Google Colab</h2>
+      <h2> Etapa 3: Execute o Google Colab</h2>
       <p>Clique na imagem abaixo para abrir o notebook que processa as imagens via OCR e envia os dados para a planilha.</p>
       <a href="https://colab.research.google.com/drive/1TU8UcbrldH7mAEclHqyfCGcP5aYmjCK2?usp=sharing" target="_blank">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Google_Colab_pic.png/1024px-Google_Colab_pic.png" alt="Google Colab" class="colab-img">
