@@ -14,6 +14,7 @@
       background-size: cover;
       color: #fff;
       position: relative;
+      overflow-x: hidden;
     }
 
     body::before {
@@ -21,7 +22,7 @@
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background-color: rgba(0, 0, 0, 0.6);
+      background-color: rgba(0, 0, 0, 0.7);
       z-index: 0;
     }
 
@@ -29,111 +30,71 @@
       position: relative;
       z-index: 1;
       width: 90%;
-      max-width: 1000px;
+      max-width: 1100px;
       margin: auto;
-      padding: 50px 20px;
-      background-color: rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      box-shadow: 0 0 30px rgba(0,0,0,0.5);
-      backdrop-filter: blur(10px);
+      padding: 60px 30px;
+      background-color: rgba(0, 0, 0, 0.85);
+      border-radius: 25px;
+      box-shadow: 0 0 40px rgba(0,0,0,0.6);
+      backdrop-filter: blur(20px);
       text-align: center;
+      animation: fadeIn 1.5s ease-out;
     }
 
     h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
+      font-size: 3.2rem;
+      margin-bottom: 30px;
       color: #fff;
-      text-shadow: 2px 2px 5px #000;
+      text-shadow: 2px 2px 8px #000;
     }
 
-    .workflow {
+    .timeline {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin: 40px 0;
-    }
-
-    .stage {
-      text-align: center;
-      animation: float 2s ease-in-out infinite;
-    }
-
-    .icon {
-      width: 80px;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      transition: transform 0.3s ease;
-    }
-
-    .icon:hover {
-      transform: scale(1.1);
-    }
-
-    .arrow {
-      font-size: 2rem;
-      animation: pulse 1.5s infinite;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.5; }
-    }
-
-    .carousel {
-      display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      gap: 20px;
-      padding: 20px 0;
+      flex-direction: column;
+      gap: 40px;
+      margin-top: 40px;
+      position: relative;
     }
 
     .step {
-      flex: 0 0 80%;
-      scroll-snap-align: center;
-      background-color: rgba(255, 255, 255, 0.15);
-      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      background-color: rgba(255,255,255,0.08);
+      border-radius: 20px;
       padding: 20px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-      transition: transform 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      animation: slideUp 1s ease forwards;
+      opacity: 0;
+    }
+
+    .step:nth-child(1) { animation-delay: 0.5s; }
+    .step:nth-child(2) { animation-delay: 1s; }
+    .step:nth-child(3) { animation-delay: 1.5s; }
+
+    .step img {
+      width: 100px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .step-content {
+      text-align: left;
+    }
+
+    .step-content h2 {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
       color: #fff;
     }
 
-    .step:hover {
-      transform: scale(1.05);
-    }
-
-    .step img {
-      max-width: 100%;
-      border-radius: 10px;
-      margin-bottom: 15px;
-    }
-
-    .step h2 {
-      font-size: 1.8rem;
-      margin-bottom: 10px;
-    }
-
-    .step p {
+    .step-content p {
       font-size: 1.1rem;
-    }
-
-    .footer-buttons {
-      margin-top: 30px;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
+      color: #ddd;
     }
 
     .btn {
+      margin-top: 40px;
       padding: 15px 30px;
       font-size: 1.2rem;
       font-weight: bold;
@@ -145,11 +106,22 @@
       text-decoration: none;
       box-shadow: 0 8px 20px rgba(0,0,0,0.4);
       transition: all 0.3s ease;
+      display: inline-block;
     }
 
     .btn:hover {
       transform: scale(1.1);
       background: linear-gradient(135deg, #9b59b6, #3498db);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -157,34 +129,33 @@
   <div class="container">
     <h1>📖 Como Funciona Nosso Aplicativo</h1>
 
-    <div class="workflow">
-      <div class="stage">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Dom_Casmurro.jpg" alt="Capa do livro" class="icon">
-        <p>📸 Capa fotografada</p>
+    <div class="timeline">
+      <div class="step">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Dom_Casmurro.jpg" alt="Capa do livro">
+        <div class="step-content">
+          <h2>1. Captura da Imagem</h2>
+          <p>O usuário fotografa a capa do livro e salva na <a href="https://drive.google.com/drive/folders/1YZvqh4FdZ9d0WK9e5N5plAiceq2UrOTh?usp=drive_link" target="_blank" style="color:#9cf;">pasta de imagens</a> com nome como <strong>20.1.CAPA</strong>.</p>
+        </div>
       </div>
-      <div class="arrow">➡️</div>
-      <div class="stage">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Google_Drive_logo.png/600px-Google_Drive_logo.png" alt="Google Drive" class="icon">
-        <p>☁️ Enviada ao Drive</p>
+
+      <div class="step">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Google_Colaboratory_logo.svg/512px-Google_Colaboratory_logo.svg.png" alt="Google Colab">
+        <div class="step-content">
+          <h2>2. Processamento via Colab</h2>
+          <p>O script no <a href="https://colab.research.google.com/drive/1TU8UcbrldH7mAEclHqyfCGcP5aYmjCK2?usp=sharing" target="_blank" style="color:#9cf;">Google Colab</a> acessa a imagem, aplica OCR e extrai os dados automaticamente.</p>
+        </div>
       </div>
-      <div class="arrow">➡️</div>
-      <div class="stage">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Google_Colaboratory_logo.svg/512px-Google_Colaboratory_logo.svg.png" alt="Google Colab" class="icon">
-        <p>🧠 OCR via Colab</p>
-      </div>
-      <div class="arrow">➡️</div>
-      <div class="stage">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Sheets_logo.svg" alt="Google Sheets" class="icon">
-        <p>📊 Dados organizados</p>
+
+      <div class="step">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Sheets_logo.svg" alt="Google Sheets">
+        <div class="step-content">
+          <h2>3. Visualização dos Dados</h2>
+          <p>Os dados extraídos são organizados em uma planilha acessível <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSUvYFF8wCk-Ag-mEkCu5pNaikK3ltHAuFx_-eguoaKgy2IRSwwL6wGze8ZOdMs_Q-14wSIRDUFvsRy/pubhtml?gid=0&single=true" target="_blank" style="color:#9cf;">aqui</a>.</p>
+        </div>
       </div>
     </div>
 
- 
-    <div class="footer-buttons">
-   
-        <a href="trabalheaqui.html" class="btn">🛠️ Teste Aqui!</a>
-
-      </div>
+    <a href="https://mandic82.github.io/Bibliocolab/trabalheaqui.html" class="btn">🛠️ Teste Agora</a>
   </div>
 </body>
 </html>
