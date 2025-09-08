@@ -100,7 +100,19 @@
 
     .colab-img:hover {
       transform: scale(1.1);
+
+      }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
     }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
   </style>
 </head>
 <body>
@@ -125,12 +137,12 @@
       <p id="file-info"></p> <!-- Para mostrar as imagens selecionadas --></p>
     </div>
 
-<div class="section">
-   <h2>Etapa 4: Salve as imagens</h2> 
-   <p>Clique na figura abaixo para salva as imagens na pasta do Google drive que serão enviadas para o processamento </p>
-    <a href="https://drive.google.com/drive/folders/1YZvqh4FdZ9d0WK9e5N5plAiceq2UrOTh?usp=drive_link" target="blank"> 
-      <img scr="https://upload.wikimedia.org/wikipedia/commons/5/52/Folder-front-premium.png" alt="folder" class="img">
-       </a>
+<div class="section" style="--i:4">
+      <h2>Etapa 4: Salve na Pasta</h2>
+      <p>Clique na imagem abaixo para abrir a pasta de destino no Google Drive:</p>
+      <a href="https://drive.google.com/drive/folders/1YZvqh4FdZ9d0WK9e5N5plAiceq2UrOTh?usp=drive_link" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/52/Folder-front-premium.png" alt="Pasta Drive" class="folder-img">
+      </a>
     </div>
     
     <div class="section">
