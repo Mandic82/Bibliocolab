@@ -36,14 +36,15 @@
       border-radius: 20px;
       box-shadow: 0 0 30px rgba(0,0,0,0.5);
       backdrop-filter: blur(10px); /* Vidro mais fosco */
-      text-align: center;
-}
+      text-align: left; /* Alinhamento à esquerda */
+    }
 
     h1 {
       font-size: 3rem;
       margin-bottom: 20px;
       color: #fff;
       text-shadow: 2px 2px 5px #000;
+      text-align: center; /* Manter centralizado apenas o título principal */
     }
 
     .section {
@@ -106,48 +107,47 @@
   <div class="container">
     <h1>🛠️ Teste Aqui...</h1>
 
-<div class="section">
-  <h2>📸 Etapa 1: Selecione e Fotografe as Obras</h2>
-  <p>Antes de começar o processo, selecione as obras que serão cadastradas. Tire fotos nítidas e bem iluminadas da frente da obra e, se necessário, da contracapa. Certifique-se de que as imagens estejam de boa qualidade para garantir a melhor extração de dados via OCR.</p>
-  <p><strong>Dica:</strong> Utilize uma boa iluminação e evite reflexos nas imagens para garantir o sucesso do processamento.</p>
-</div>
+    <div class="section">
+      <h2>📸 Etapa 1: Selecione e Fotografe as Obras</h2>
+      <p>Antes de começar o processo, selecione as obras que serão cadastradas. Tire fotos nítidas e bem iluminadas da frente da obra e, se necessário, da contracapa. Certifique-se de que as imagens estejam de boa qualidade para garantir a melhor extração de dados via OCR.</p>
+      <p><strong>Dica:</strong> Utilize uma boa iluminação e evite reflexos nas imagens para garantir o sucesso do processamento.</p>
+    </div>
 
-<div class="section">
-  <h2>📸 Etapa 2: Selecione e Envie as Imagens</h2>
-  <p>Escolha as imagens da capa e contracapa para enviar para o processamento. As imagens devem ser nomeadas como <strong>1.1.CAPA</strong> e/ou <strong>1.1.CONTRACAPA</strong>.</p>
+    <div class="section">
+      <h2>📸 Etapa 2: Selecione e Envie as Imagens</h2>
+      <p>Escolha as imagens da capa e contracapa para enviar para o processamento. As imagens devem ser nomeadas como <strong>1.1.CAPA</strong> e/ou <strong>1.1.CONTRACAPA</strong>.</p>
   
-  <!-- Campo para upload de arquivos -->
-  <label for="file-upload" class="btn">📤 Selecionar Imagens</label>
-  <input type="file" id="file-upload" name="file-upload" accept="image/*" multiple>
-  <p id="file-info"></p> <!-- Para mostrar as imagens selecionadas -->
-  
-</div>
+      <!-- Campo para upload de arquivos -->
+      <label for="file-upload" class="btn">📤 Selecionar Imagens</label>
+      <input type="file" id="file-upload" name="file-upload" accept="image/*" multiple>
+      <p id="file-info"></p> <!-- Para mostrar as imagens selecionadas -->
+    </div>
 
-<div class="section">
-  <h2>🧠 Etapa 3: Execute o Google Colab</h2>
-  <p>Clique na imagem abaixo para abrir o notebook que processa as imagens via OCR e envia os dados para a planilha.</p>
-  <a href="https://colab.research.google.com/drive/1TU8UcbrldH7mAEclHqyfCGcP5aYmjCK2?usp=sharing" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Google_Colab_pic.png/1024px-Google_Colab_pic.png" alt="Google Colab" class="colab-img">
-  </a>
-</div>
+    <div class="section">
+      <h2>🧠 Etapa 3: Execute o Google Colab</h2>
+      <p>Clique na imagem abaixo para abrir o notebook que processa as imagens via OCR e envia os dados para a planilha.</p>
+      <a href="https://colab.research.google.com/drive/1TU8UcbrldH7mAEclHqyfCGcP5aYmjCK2?usp=sharing" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Google_Colab_pic.png/1024px-Google_Colab_pic.png" alt="Google Colab" class="colab-img">
+      </a>
+    </div>
 
-<div class="section">
-  <h2>📊 Etapa 4: Veja os Resultados</h2>
-  <p>Após a execução do Colab, os dados extraídos estarão organizados na planilha abaixo:</p>
-  <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSUvYFF8wCk-Ag-mEkCu5pNaikK3ltHAuFx_-eguoaKgy2IRSwwL6wGze8ZOdMs_Q-14wSIRDUFvsRy/pubhtml?gid=0&single=true" target="_blank" class="btn">📄 Ver Planilha</a>
-</div>
+    <div class="section">
+      <h2>📊 Etapa 4: Veja os Resultados</h2>
+      <p>Após a execução do Colab, os dados extraídos estarão organizados na planilha abaixo:</p>
+      <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSUvYFF8wCk-Ag-mEkCu5pNaikK3ltHAuFx_-eguoaKgy2IRSwwL6wGze8ZOdMs_Q-14wSIRDUFvsRy/pubhtml?gid=0&single=true" target="_blank" class="btn">📄 Ver Planilha</a>
+    </div>
 
-<script>
-  // Função para exibir os nomes dos arquivos selecionados
-  document.getElementById('file-upload').addEventListener('change', function() {
-    const files = this.files;
-    let fileList = '';
-    for (let i = 0; i < files.length; i++) {
-      fileList += `<li>${files[i].name}</li>`;
-    }
-    document.getElementById('file-info').innerHTML = `Arquivos selecionados: <ul>${fileList}</ul>`;
-  });
-</script>
+    <script>
+      // Função para exibir os nomes dos arquivos selecionados
+      document.getElementById('file-upload').addEventListener('change', function() {
+        const files = this.files;
+        let fileList = '';
+        for (let i = 0; i < files.length; i++) {
+          fileList += `<li>${files[i].name}</li>`;
+        }
+        document.getElementById('file-info').innerHTML = `Arquivos selecionados: <ul>${fileList}</ul>`;
+      });
+    </script>
 
   </div>
 </body>
