@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fundador da Biblioteca</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Georgia', serif;
+      background: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 1000px;
+      margin: auto;
+      padding: 60px 30px;
+      background-color: rgba(0, 0, 0, 0.85);
+      border-radius: 25px;
+      box-shadow: 0 0 40px rgba(0,0,0,0.6);
+      backdrop-filter: blur(20px);
+      text-align: center;
+      animation: fadeIn 1.5s ease-out;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 8px #000;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+      color: #ccc;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      color: #ddd;
+    }
+
+    .portrait {
+      width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+      margin-bottom: 30px;
+      transition: transform 0.3s ease;
+    }
+
+    .portrait:hover {
+      transform: scale(1.05);
+    }
+
+    .timeline {
+      margin: 40px 0;
+      text-align: left;
+    }
+
+    .event {
+      margin-bottom: 30px;
+      padding-left: 20px;
+      border-left: 3px solid #9b59b6;
+    }
+
+    .event h3 {
+      font-size: 1.3rem;
+      margin-bottom: 5px;
+      color: #fff;
+    }
+
+    .event p {
+      font-size: 1.1rem;
+      color: #ccc;
+    }
+
+    .btn {
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #fff;
+      background: linear-gradient(135deg, #8e44ad, #2980b9);
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      background: linear-gradient(135deg, #9b59b6, #3498db);
+    }
+
+    audio {
+      margin-bottom: 30px;
+      width: 100%;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.35); }
+      to { opacity: 1; transform: scale(1.1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📚 Homenagem ao Fundador</h1>
+    <audio controls autoplay>
+      <source src="narracao.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio HTML5.
+    </audio>
+    <img src="/attachments/MuDbgWsLE7xar12u7CKcG.jpeg" alt="Paulo Bourroul" class="portrait">
+    <h2>Paulo Bourroul</h2>
+    <p>
+      A Biblioteca Paulo Bourroul é mais do que um acervo — é um legado. Fundada com o propósito de preservar o conhecimento, promover a cultura e inspirar gerações, ela carrega o nome de um homem cuja paixão pelos livros e pela educação transformou vidas.
+    </p>
+    <p>
+      Esta homenagem é dedicada à memória de Paulo Bourroul, cuja visão e dedicação deram origem a este espaço de saber. Que cada obra catalogada, cada página lida e cada visitante inspirado seja reflexo da sua contribuição eterna.
+    </p>
+
+    <div class="timeline">
+      <div class="event">
+        <h3>📖 1952 — Fundação da Biblioteca</h3>
+        <p>Paulo Bourroul inaugura o espaço com um acervo inicial de 300 obras raras e clássicas da literatura brasileira.</p>
+      </div>
+      <div class="event">
+        <h3>🎓 1968 — Projeto de Alfabetização</h3>
+        <p>Iniciativas educacionais são lançadas para atender jovens e adultos da comunidade local.</p>
+      </div>
+      <div class="event">
+        <h3>🏛️ 1985 — Reconhecimento Municipal</h3>
+        <p>A biblioteca é oficialmente reconhecida como patrimônio cultural da cidade.</p>
+      </div>
+      <div class="event">
+        <h3>🌟 Legado</h3>
+        <p>Hoje, seu nome vive em cada livro catalogado, em cada leitor inspirado e em cada projeto que nasce dentro deste espaço.</p>
+      </div>
+    </div>
+
+    <a href="index.html" class="btn">🏛️ Voltar à Página Inicial</a>
+  </div>
+</body>
+</html>
+
