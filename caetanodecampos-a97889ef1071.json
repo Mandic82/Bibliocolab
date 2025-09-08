@@ -2,7 +2,7 @@
   "type": "service_account",
   "project_id": "xxxxxxxxxxxxxxxx",
   "private_key_id": "xxxxxxxxxxxxxxxxxxxxxxxxxxx",
-  "private_key": "-----BEGIN PRIVATE KEY-----\XXXXXXXXXXXXXXXXXXX"
+  "private_key": "-----BEGIN PRIVATE KEY-----\A1XXXXXXXXXXXXXXXXXX"
   "client_email": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
   "client_id": "xxxxxxxxxxxxxxxxxxxx",
   "auth_uri": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
