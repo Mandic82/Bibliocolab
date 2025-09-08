@@ -131,23 +131,15 @@
   <p>Nomeie as imagens de forma ordenada, como por exemplo <strong>1.1.CAPA</strong> e/ou <strong>1.1.CONTRACAPA</strong>.</p>
 </div>
    
-  <div class="section">
-   <h2>Etapa 3: Selecione e Envie as Imagens</h2>
-      <p>Escolha as imagens da capa e contracapa para enviá-las</p>
-      <label for="file-upload" class="btn">📤 Selecionar Imagens</label>
-      <p id="file-info"></p> <!-- Para mostrar as imagens selecionadas --></p>
-    </div>
-
-<div class="section" style="--i:4">
-      <h2>Etapa 4: Salve na Pasta</h2>
-      <p>Clique na imagem abaixo para abrir a pasta de destino no Google Drive:</p>
-      <a href="https://drive.google.com/drive/folders/1YZvqh4FdZ9d0WK9e5N5plAiceq2UrOTh?usp=drive_link" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Google_Drive_-_New_Logo.png" alt="Pasta Drive" class="folder-img">
-      </a>
+ <div class="section" style="--i:3">
+      <h2>Etapa 3: Selecione e Envie</h2>
+      <label for="file-upload" class="btn">Selecionar Imagens</label>
+      <input type="file" id="file-upload" multiple accept="image/*" style="display:none;">
+      <p id="file-info"></p>
     </div>
     
     <div class="section">
-      <h2> Etapa 5: Execute o Google Colab</h2>
+      <h2> Etapa 4: Execute o Google Colab</h2>
       <p>Clique na imagem abaixo para abrir o notebook que processa as imagens via OCR e envia os dados para a planilha.</p>
       <a href="https://colab.research.google.com/drive/1TU8UcbrldH7mAEclHqyfCGcP5aYmjCK2?usp=sharing" target="_blank">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Google_Colab_pic.png/1024px-Google_Colab_pic.png" alt="Google Colab" class="colab-img">
@@ -155,7 +147,7 @@
     </div>
 
     <div class="section">
-      <h2>📊 Etapa 6: Veja os Resultados</h2>
+      <h2> Etapa 5: Veja os Resultados</h2>
       <p>Após a execução do Colab, os dados extraídos estarão organizados na planilha abaixo:</p>
       <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSUvYFF8wCk-Ag-mEkCu5pNaikK3ltHAuFx_-eguoaKgy2IRSwwL6wGze8ZOdMs_Q-14wSIRDUFvsRy/pubhtml?gid=0&single=true" target="_blank" class="btn">📄 Ver Planilha</a>
     </div>
