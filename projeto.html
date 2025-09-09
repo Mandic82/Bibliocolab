@@ -128,79 +128,81 @@
   <div class="container">
     <h1>📖 Entenda o funcionamento.. </h1>
 
-    <div class="timeline">
-      <div class="step">
-          <div class="step-content">
-          <h2>⚙️ Instalação e Execução</h2>
-          <p>
-           <li>1. Abra o notebook `notebook.ipynb` no **Google Colab**. </li>
-           <li>2.Monte o Google Drive para acessar a pasta de imagens/PDFs. </li> 
-           <li>3.Verifique se o caminho do arquivo JSON está correto no código.</li>  
-           <li>4.Execute todas as células do notebook.</li>
-          O código instalará automaticamente todas as dependências necessárias, incluindo OCR e bibliotecas de processamento de imagens.</p>
-        </div>
-      </div>
-
-      
-      <div class="step">
-          <div class="step-content">
-          <h2>🧠 Funcionalidades</h2>
-          <p>
-           - **OCR robusto em português** com EasyOCR.  
-           - Suporte a **imagens** (`.jpg`, `.png`, `.jpeg`) e **PDFs**.  
-           - **Pré-processamento das imagens** para aumentar a precisão do OCR (cinza, contraste, equalização).  
-           - **Pareamento automático** de capas e contracapas.  
-           - **Pós-processamento de texto**, incluindo correção de palavras quebradas e remoção de caracteres inválidos.  
-           - **Evita duplicidade** na planilha, gravando apenas novos arquivos.  
-           - Registro dos seguintes campos na planilha:
-           - Título  
-           - Autor  
-           - Ano  
-           - Editora  
-           - Nome do arquivo
-          ---</p>
-        </div>
-      </div>
-    
-    <div class="step">
-         <div class="step-content">
-          <h2>📝 Observações</h2>
-          <p>## 
-- A pasta de imagens/PDFs deve estar organizada e numerada, seguindo o padrão `1.1.capa`, `1.1.contra` para manter o pareamento correto.  
-- O OCR funciona melhor em imagens **nítidas e legíveis**. PDFs digitalizados de baixa qualidade podem precisar de ajuste manual.  
-- É recomendado usar **GPU no Colab** para acelerar o processamento, especialmente se houver muitas imagens ou PDFs grandes.</p>
-          <p>## 
-💡 Sugestões de melhoria futura
-- OCR paralelo em múltiplas GPUs ou threads.  
-- Reconstrução automática de títulos espalhados em várias linhas.  
-- Integração com banco de dados externo para consultas e buscas avançadas.  </p>
-        </div>
-      </div>
-
-     
-     <div class="step">
-         <div class="step-content">
-          <h2>🛠 Tecnologias utilizadas</h2>
-          <p>## 
-- Python 3.x  
-- [Google Colab](https://colab.research.google.com/)  
-- [EasyOCR](https://github.com/JaidedAI/EasyOCR)  
-- [Pillow](https://python-pillow.org/)  
-- [pdf2image](https://github.com/Belval/pdf2image)  
-- [OpenCV](https://opencv.org/)  
-- [gspread](https://github.com/burnash/gspread)  
-- [OAuth2Client](https://oauth2client.readthedocs.io/)</p>
-                 </div>
-      </div>
-
-      
-    
-    
+   <div class="timeline">
+  <div class="step">
+    <div class="step-content">
+      <h2>⚙️ Instalação e Execução</h2>
+      <ol>
+        <li>Abra o notebook <code>notebook.ipynb</code> no <strong>Google Colab</strong>.</li>
+        <li>Monte o Google Drive para acessar a pasta de imagens/PDFs.</li>
+        <li>Verifique se o caminho do arquivo JSON está correto no código.</li>
+        <li>Execute todas as células do notebook.</li>
+      </ol>
+      <p>
+        O código instalará automaticamente todas as dependências necessárias, incluindo OCR e bibliotecas de processamento de imagens.
+      </p>
     </div>
+  </div>
 
-    <a href="https://mandic82.github.io/Bibliocolab/ConheçaoProjeto.html" class="btn">🛠️ Veja a estrutura básica</a>
-   </div>
-</body>
+  <div class="step">
+    <div class="step-content">
+      <h2>🧠 Funcionalidades</h2>
+      <ul>
+        <li><strong>OCR robusto em português</strong> com EasyOCR.</li>
+        <li>Suporte a <strong>imagens</strong> (<code>.jpg</code>, <code>.png</code>, <code>.jpeg</code>) e <strong>PDFs</strong>.</li>
+        <li><strong>Pré-processamento das imagens</strong> para aumentar a precisão do OCR (cinza, contraste, equalização).</li>
+        <li><strong>Pareamento automático</strong> de capas e contracapas.</li>
+        <li><strong>Pós-processamento de texto</strong>, incluindo correção de palavras quebradas e remoção de caracteres inválidos.</li>
+        <li><strong>Evita duplicidade</strong> na planilha, gravando apenas novos arquivos.</li>
+        <li>Registro dos seguintes campos na planilha:</li>
+        <ul>
+          <li>Título</li>
+          <li>Autor</li>
+          <li>Ano</li>
+          <li>Editora</li>
+          <li>Nome do arquivo</li>
+        </ul>
+      </ul>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-content">
+      <h2>📝 Observações</h2>
+      <ul>
+        <li>A pasta de imagens/PDFs deve estar organizada e numerada, seguindo o padrão <code>1.1.capa</code>, <code>1.1.contra</code> para manter o pareamento correto.</li>
+        <li>O OCR funciona melhor em imagens <strong>nítidas e legíveis</strong>. PDFs digitalizados de baixa qualidade podem precisar de ajuste manual.</li>
+        <li>É recomendado usar <strong>GPU no Colab</strong> para acelerar o processamento, especialmente se houver muitas imagens ou PDFs grandes.</li>
+      </ul>
+
+      <h3>💡 Sugestões de melhoria futura</h3>
+      <ul>
+        <li>OCR paralelo em múltiplas GPUs ou threads.</li>
+        <li>Reconstrução automática de títulos espalhados em várias linhas.</li>
+        <li>Integração com banco de dados externo para consultas e buscas avançadas.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-content">
+      <h2>🛠 Tecnologias utilizadas</h2>
+      <ul>
+        <li>Python 3.x</li>
+        <li><a href="https://colab.research.google.com/">Google Colab</a></li>
+        <li><a href="https://github.com/JaidedAI/EasyOCR">EasyOCR</a></li>
+        <li><a href="https://python-pillow.org/">Pillow</a></li>
+        <li><a href="https://github.com/Belval/pdf2image">pdf2image</a></li>
+        <li><a href="https://opencv.org/">OpenCV</a></li>
+        <li><a href="https://github.com/burnash/gspread">gspread</a></li>
+        <li><a href="https://oauth2client.readthedocs.io/">OAuth2Client</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<a href="https://mandic82.github.io/Bibliocolab/ConheçaoProjeto.html" class="btn">🛠️ Veja a estrutura básica</a>
+  </div>
+  
+  </body>
 </html>
-
-
