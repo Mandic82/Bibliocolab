@@ -1,36 +1,187 @@
-## ⚙️ Instalação e Execução
-1. Abra o notebook `notebook.ipynb` no **Google Colab**.  
-2. Monte o Google Drive para acessar a pasta de imagens/PDFs.  
-3. Verifique se o caminho do arquivo JSON está correto no código.  
-4. Execute todas as células do notebook.  
-> O código instalará automaticamente todas as dependências necessárias, incluindo OCR e bibliotecas de processamento de imagens.
+  <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ConheçaoProjeto</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      position: relative;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 0;
+    }
 
-## 🧠 Funcionalidades
-- **OCR robusto em português** com EasyOCR.  
-- Suporte a **imagens** (`.jpg`, `.png`, `.jpeg`) e **PDFs**.  
-- **Pré-processamento das imagens** para aumentar a precisão do OCR (cinza, contraste, equalização).  
-- **Pareamento automático** de capas e contracapas.  
-- **Pós-processamento de texto**, incluindo correção de palavras quebradas e remoção de caracteres inválidos.  
-- **Evita duplicidade** na planilha, gravando apenas novos arquivos.  
-- Registro dos seguintes campos na planilha:
- - Título  
-- Autor  
- - Ano  
-- Editora  
- - Nome do arquivo
----
+    .container {
+      position: relative;
+      z-index: 1;
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+      padding: 60px 30px;
+      background-color: rgba(0, 0, 0, 0.75);
+      border-radius: 25px;
+      box-shadow: 0 0 40px rgba(0,0,0,0.6);
+      backdrop-filter: blur(20px);
+      text-align: center;
+      animation: fadeIn 1.5s ease-out;
+    }
 
-## 📝 Observações
+    h1 {
+      font-size: 3.2rem;
+      margin-bottom: 30px;
+      color: #fff;
+      text-shadow: 2px 2px 8px #000;
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      margin-top: 40px;
+      position: relative;
+    }
+
+    .step {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      background-color: rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      animation: slideUp 1s ease forwards;
+      opacity: 0;
+    }
+
+    .step:nth-child(1) { animation-delay: 0.5s; }
+    .step:nth-child(2) { animation-delay: 1s; }
+    .step:nth-child(3) { animation-delay: 1.5s; }
+
+    .step img {
+      width: 100px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .step-content {
+      text-align: left;
+    }
+
+    .step-content h2 {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .step-content p {
+      font-size: 1.1rem;
+      color: #ddd;
+    }
+
+    .btn {
+      margin-top: 40px;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #fff;
+      background: linear-gradient(135deg, #8e44ad, #2980b9);
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      background: linear-gradient(135deg, #9b59b6, #3498db);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📖 Entenda o funcionamento.. </h1>
+
+    <div class="timeline">
+      <div class="step">
+          <div class="step-content">
+          <h2>⚙️ Instalação e Execução</h2>
+          <p>
+           <li>1. Abra o notebook `notebook.ipynb` no **Google Colab**. </li>
+           <li>2.Monte o Google Drive para acessar a pasta de imagens/PDFs. </li> 
+           <li>3.Verifique se o caminho do arquivo JSON está correto no código.</li>  
+           <li>4.Execute todas as células do notebook.</li>
+          O código instalará automaticamente todas as dependências necessárias, incluindo OCR e bibliotecas de processamento de imagens.</p>
+        </div>
+      </div>
+
+      
+      <div class="step">
+          <div class="step-content">
+          <h2>🧠 Funcionalidades</h2>
+          <p>
+           - **OCR robusto em português** com EasyOCR.  
+           - Suporte a **imagens** (`.jpg`, `.png`, `.jpeg`) e **PDFs**.  
+           - **Pré-processamento das imagens** para aumentar a precisão do OCR (cinza, contraste, equalização).  
+           - **Pareamento automático** de capas e contracapas.  
+           - **Pós-processamento de texto**, incluindo correção de palavras quebradas e remoção de caracteres inválidos.  
+           - **Evita duplicidade** na planilha, gravando apenas novos arquivos.  
+           - Registro dos seguintes campos na planilha:
+           - Título  
+           - Autor  
+           - Ano  
+           - Editora  
+           - Nome do arquivo
+          ---</p>
+        </div>
+      </div>
+    
+    <div class="step">
+         <div class="step-content">
+          <h2>📝 Observações</h2>
+          <p>## 
 - A pasta de imagens/PDFs deve estar organizada e numerada, seguindo o padrão `1.1.capa`, `1.1.contra` para manter o pareamento correto.  
 - O OCR funciona melhor em imagens **nítidas e legíveis**. PDFs digitalizados de baixa qualidade podem precisar de ajuste manual.  
-- É recomendado usar **GPU no Colab** para acelerar o processamento, especialmente se houver muitas imagens ou PDFs grandes.
-—
-## 💡 Sugestões de melhoria futura
+- É recomendado usar **GPU no Colab** para acelerar o processamento, especialmente se houver muitas imagens ou PDFs grandes.</p>
+          <p>## 
+💡 Sugestões de melhoria futura
 - OCR paralelo em múltiplas GPUs ou threads.  
 - Reconstrução automática de títulos espalhados em várias linhas.  
-- Integração com banco de dados externo para consultas e buscas avançadas.  
+- Integração com banco de dados externo para consultas e buscas avançadas.  </p>
+        </div>
+      </div>
 
-## 🛠 Tecnologias utilizadas
+     
+     <div class="step">
+         <div class="step-content">
+          <h2>🛠 Tecnologias utilizadas</h2>
+          <p>## 
 - Python 3.x  
 - [Google Colab](https://colab.research.google.com/)  
 - [EasyOCR](https://github.com/JaidedAI/EasyOCR)  
@@ -38,7 +189,18 @@
 - [pdf2image](https://github.com/Belval/pdf2image)  
 - [OpenCV](https://opencv.org/)  
 - [gspread](https://github.com/burnash/gspread)  
-- [OAuth2Client](https://oauth2client.readthedocs.io/)  
----
-**Oliveira A.R:**
-**09/2025**
+- [OAuth2Client](https://oauth2client.readthedocs.io/)</p>
+                 </div>
+      </div>
+
+      
+    
+    
+    </div>
+
+    <a href="https://mandic82.github.io/Bibliocolab/ConheçaoProjeto.html" class="btn">🛠️ Veja a estrutura básica</a>
+   </div>
+</body>
+</html>
+
+
